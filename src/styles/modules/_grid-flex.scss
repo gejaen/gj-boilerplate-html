@@ -1,0 +1,180 @@
+$grid-total-cols: 12;
+$grid-gutter: 0.8rem;
+
+
+$map-grid-width:(
+  "1": 12,
+  "1-12":1,
+  "2-12":2,
+  "3-12":3,
+  "4-12":4,
+  "5-12":5,
+  "6-12":6,
+  "7-12":7,
+  "8-12":8,
+  "9-12":9,
+  "10-12":10,
+  "11-12":11,
+  "1-5":2.4,
+  "2-5":4.8,
+  "3-5":7.2,
+  "4-5":9.6,
+);
+
+$map-grid-width-bp:(
+  'md' : (),
+  'sm' : (
+      "1": 12,
+      "1-12":12,
+      "2-12":12,
+      "3-12":12,
+      "4-12":12,
+      "5-12":12,
+      "6-12":12,
+      "7-12":12,
+      "8-12":12,
+      "9-12":12,
+      "10-12":12,
+      "11-12":12,
+      "1-5":12,
+      "2-5":12,
+      "3-5":12,
+      )
+);
+
+$map-grid-width-sm:(
+  "1": 12,
+  "1-12":12,
+  "2-12":12,
+  "3-12":12,
+  "4-12":12,
+  "5-12":12,
+  "6-12":12,
+  "7-12":12,
+  "8-12":12,
+  "9-12":12,
+  "10-12":12,
+  "11-12":12,
+  "1-5":12,
+  "2-5":12,
+  "3-5":12,
+  "4-5":12,
+);
+
+
+$map-breakpoints : (
+  'md' : $breakpoint-md,
+  'sm' : $breakpoint-sm,
+);
+
+
+.grid {
+  --gutter: #{$grid-gutter};
+
+    // flexbox
+    width: calc(100% + var(--gutter));
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--gutter));
+
+
+
+  > [class*="wi-"] {
+    box-sizing: border-box;
+      margin-left:var(--gutter);
+      margin-bottom:var(--gutter);
+    }
+    
+
+    // &.wi-1-5 { flex-basis: calc(20% - 20px); } //example output
+    @each $unit, $width in $map-grid-width {
+     > .wi-#{$unit} {
+          $width_comp:calc(#{$width} / #{$grid-total-cols} * 100%);
+          flex-basis: calc(#{$width_comp} - calc( 1 * var(--gutter)))
+        }
+    }
+  
+
+
+  // grid gutter sizes
+  &.gutter-0 {--gutter: 0px;}
+  &.gutter-1 {--gutter: #{$grid-gutter};}
+  &.gutter-2 {--gutter: calc(2 * #{$grid-gutter});}
+  &.gutter-3 {--gutter: calc(3 * #{$grid-gutter});}
+  &.gutter-4 {--gutter: calc(4 * #{$grid-gutter});}
+  &.gutter-5 {--gutter: calc(5 * #{$grid-gutter});}
+  &.gutter-6 {--gutter: calc(6 * #{$grid-gutter});}
+  &.gutter-7 {--gutter: calc(7 * #{$grid-gutter});}
+  &.gutter-8 {--gutter: calc(8 * #{$grid-gutter});}
+
+  
+ 
+  
+    // grid center items
+    &.grid-center {justify-content: center; }
+
+      @media only screen and (max-width: $breakpoint-sm) {
+        &.gutter-sm-0 {--gutter: 0px;}
+        &.gutter-sm-1 {--gutter: #{$grid-gutter};}
+        &.gutter-sm-2 {--gutter: calc(2 * #{$grid-gutter});}
+        &.gutter-sm-3 {--gutter: calc(3 * #{$grid-gutter});}
+        &.gutter-sm-4 {--gutter: calc(4 * #{$grid-gutter});}
+      }
+
+      @media only screen and (max-width: $breakpoint-md) {
+        &.gutter-md-0 {--gutter: 0px;}
+        &.gutter-md-1 {--gutter: #{$grid-gutter};}
+        &.gutter-md-2 {--gutter: calc(2 * #{$grid-gutter});}
+        &.gutter-md-3 {--gutter: calc(3 * #{$grid-gutter});}
+        &.gutter-md-4 {--gutter: calc(4 * #{$grid-gutter});}
+      }
+    
+
+
+
+  // width classes for breakpoints  
+  @each $bp_name, $bp_width in $map-breakpoints {
+    @media only screen and (max-width: $bp_width) {
+       > [class*="wi-"] {}
+
+          // &.wi-lg-1-5 { flex-basis: calc(20%); } //example output
+
+        @each $unit, $width in map-get($map-grid-width-bp, $bp_name) {
+          > .wi-#{$unit} {
+              flex-basis: calc(#{$grid-total-cols} / #{$grid-total-cols} * 100% - calc( 1 * var(--gutter))); 
+               }
+          
+         } 
+    
+          @each $unit, $width in $map-grid-width {
+            > .wi-#{$bp_name}-#{$unit} {              
+                  $width_comp:calc(#{$width} / #{$grid-total-cols} * 100%);
+                flex-basis: calc(#{$width_comp} - calc( 1 * var(--gutter))); 
+              }
+          }
+        
+      }
+    }
+
+
+
+    // order items
+    @media only screen and (max-width: $breakpoint-sm) {
+    .order-first-sm {order:-1;}
+    .order-last-sm {order:100;}
+  }
+  
+
+  @media only screen and (max-width: $breakpoint-md) {
+    .order-first-md {order:-1;}
+    .order-last-md {order:100;}
+  }
+  
+
+
+  }
+
+
+
+
+

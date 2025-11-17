@@ -1,0 +1,263 @@
+/*
+Naming
+
+Padding and Margin
+
+p = padding
+m = margin
+
+0 = none
+x = left + right
+y = top + bottom
+t = top
+b = bottom
+r = right
+l = left
+c = center
+
+example: .p-x1-sm {}
+example negative .p-x-1-sm{}
+
+
+sm = for small breakpoint
+md = for medium breakpoint
+
+
+
+*/
+// map with spaces
+$map-spaces: (
+  0: 0,
+  1: $sp-1,
+  2: $sp-2,
+  3: $sp-3,
+  4: $sp-4,
+  5: $sp-5,
+  6: $sp-6,
+  7: $sp-7,
+  8: $sp-8,
+  9: $sp-9,
+  10: $sp-10,
+  11: $sp-11,
+  12: $sp-12
+);
+
+
+// map with top, right, bottom, left names
+$map-names: (
+  "t" : "top",
+  "r" : "right",
+  "b" : "bottom",
+  "l" : "left",
+
+);
+
+$map-breakpoints: (
+  "sm" : $breakpoint-sm,
+  "md" : $breakpoint-md,
+);
+
+
+// SPACE
+// ---------------------------------------------------------------------------
+:root {  
+    // sapce
+    --sp-base:2px;
+  }
+
+
+
+// paddings  ----------
+.p-0 {padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;}
+
+@each $name, $sp in $map-spaces {
+    
+    // on x and y axis
+    .p-x#{$name} { padding-left: $sp; padding-right: $sp;}
+    .p-y#{$name} { padding-top: $sp; padding-bottom: $sp;}
+
+    // for each side: t, r, b, l
+    @each $key, $val in $map-names {
+        .p-#{$key}#{$name} { padding-#{$val}: $sp;}
+    }
+}
+
+
+// paddings responsive (for breakpoints)
+@each $breakpoint-short, $breakpoint-var in $map-breakpoints { 
+
+    @media only screen and (max-width: $breakpoint-var) {
+
+        .p-0-#{$breakpoint-short} {padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;}
+
+        @each $name, $sp in $map-spaces {
+    
+        // on x and y axis
+        .p-x#{$name}-#{$breakpoint-short} { padding-left: $sp; padding-right: $sp;}
+        .p-y#{$name}-#{$breakpoint-short} { padding-top: $sp; padding-bottom: $sp;}
+    
+        // for each side: t, r, b, l
+            @each $key, $val in $map-names {
+                .p-#{$key}#{$name}-#{$breakpoint-short} { padding-#{$val}: $sp;}
+            }
+        }
+
+}
+
+}
+
+
+
+// margins  ----------
+.m-0 {margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;}
+
+@each $name, $sp in $map-spaces {
+    
+    // on x and y axis
+    .m-x#{$name} { margin-left: $sp; margin-right: $sp;}
+    .m-y#{$name} { margin-top: $sp; margin-bottom: $sp;}
+
+    // for each side: t, r, b, l
+    @each $key, $val in $map-names {
+        .m-#{$key}#{$name} { margin-#{$val}: $sp;}
+    }
+
+      // negative for each side: t, r, b, l
+      @each $key, $val in $map-names {
+        .m-#{$key}-#{$name} { margin-#{$val}: -$sp;}
+    }
+}
+
+
+// margins responsive (for breakpoints)
+@each $breakpoint-short, $breakpoint-var in $map-breakpoints { 
+
+    @media only screen and (max-width: $breakpoint-var) {
+
+        .m-0-#{$breakpoint-short} {margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;}
+
+        @each $name, $sp in $map-spaces {
+    
+        // on x and y axis
+        .m-x#{$name}-#{$breakpoint-short} { margin-left: $sp; margin-right: $sp;}
+        .m-y#{$name}-#{$breakpoint-short} { margin-top: $sp; margin-bottom: $sp;}
+    
+        // for each side: t, r, b, l
+            @each $key, $val in $map-names {
+                .m-#{$key}#{$name}-#{$breakpoint-short} { margin-#{$val}: $sp;}
+            }
+        }
+
+}
+
+}
+
+
+
+// positions
+@each $name, $sp in $map-spaces {
+    @each $key, $value in $map-names {
+        .po-#{$key}#{$name} { #{$value}: $sp;}
+        .po-#{$key}-#{$name} { #{$value}: -$sp;}
+    }
+}
+
+
+
+//additional spacing using style and css variables
+/* spaces ---------------------------------- 
+using inline style with assigning custom properties and calculating based on base spacer --sp-base
+only on large screens for example
+*/
+
+/* margins */
+@include for-large {
+[style*="--mar:"] {
+    margin: calc(min(var(--mar), 500) * var(--sp-base));
+}
+
+[style*="--mar-x:"] {
+    margin-left: calc(min(var(--mar-x), 500) * var(--sp-base));
+    margin-right: calc(min(var(--mar-x), 500) * var(--sp-base));
+}
+
+[style*="--mar-y:"] {
+    margin-top: calc(min(var(--mar-y), 500) * var(--sp-base));
+    margin-bottom: calc(min(var(--mar-y), 500) * var(--sp-base));
+}
+
+[style*="--mar-t:"] {
+    margin-top: calc(min(var(--mar-t), 500) * var(--sp-base));
+}
+
+[style*="--mar-b:"] {
+    margin-bottom: calc(min(var(--mar-b), 500) * var(--sp-base));
+}
+
+[style*="--mar-l:"] {
+    margin-left: calc(min(var(--mar-l), 500) * var(--sp-base));
+}
+
+[style*="--mar-r:"] {
+    margin-right: calc(min(var(--mar-r), 500) * var(--sp-base));
+}
+
+
+/* padding */
+[style*="--pad:"] {
+    padding: calc(min(var(--pad), 500) * var(--sp-base));
+}
+
+[style*="--pad-x:"] {
+    padding-left: calc(min(var(--pad-x), 500) * var(--sp-base));
+    padding-right: calc(min(var(--pad-x), 500) * var(--sp-base));
+}
+
+[style*="--pad-y:"] {
+    padding-top: calc(min(var(--pad-y), 500) * var(--sp-base));
+    padding-bottom: calc(min(var(--pad-y), 500) * var(--sp-base));
+}
+
+[style*="--pad-t:"] {
+    padding-top: calc(min(var(--pad-t), 500) * var(--sp-base));
+}
+
+[style*="--pad-b:"] {
+    padding-bottom: calc(min(var(--pad-b), 500) * var(--sp-base));
+}
+
+[style*="--pad-l:"] {
+    padding-left: calc(min(var(--pad-l), 500) * var(--sp-base));
+}
+
+[style*="--pad-r:"] {
+    padding-right: calc(min(var(--pad-r), 500) * var(--sp-base));
+}
+
+
+/* position */
+[style*="--pos-t:"] {
+    top: calc(min(var(--pos-t), 500) * var(--sp-base));
+}
+
+[style*="--pos-l:"] {
+    left: calc(min(var(--pos-l), 500) * var(--sp-base));
+}
+
+[style*="--pos-r:"] {
+    right: calc(min(var(--pos-r), 500) * var(--sp-base));
+}
+
+
+
+/* hight */
+[style*="--hi-min:"] {
+    min-height: calc(var(--hi-min) * var(--sp-base));
+}
+
+[style*="--hi:"] {
+    height: calc(var(--hi) * var(--sp-base));
+}
+
+
+}

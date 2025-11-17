@@ -1,0 +1,119 @@
+.btn {
+  text-decoration: none;
+  border: none;
+  border-radius: 2rem;
+  line-height: 2.4em;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-left:1.6em;
+  padding-right:1.6em;
+  font-weight: 600;
+  transition: all .15s ease-in-out;
+
+  &:hover {
+    background-color: $color-grey5;
+    transform: scale(1.05);
+  }
+
+  &.co-bg-ma {
+    background-color: $color-main;
+    color:$color-light;
+  }
+
+  &.co-bg-ma:hover,
+  &.co-bg-ma:active,
+   {
+    background-color: $color-main-dark;
+    color:$color-light;
+  }
+
+
+  &.co-bg-ma3 {
+    background-color: $color-main3;
+    color:$color-light;
+  }
+
+  &.co-bg-ma3:hover,
+  &.co-bg-ma3:active,
+   {
+    background-color: $color-main3-dark;
+    color:$color-light;
+  }
+
+
+  &.co-bg-dark {
+    background-color: $color-dark;
+    color:$color-light;
+  }
+
+  &.co-bg-dark:hover,
+  &.co-bg-dark:active,
+   {
+    background-color: $color-main-dark;
+    color:$color-light;
+  }
+
+  &.is-hollow {
+    border:solid 2px $color-light;
+    background-color: transparent;
+    color: $color-light;
+  }
+
+
+  &.is-small {
+    font-size: 0.9em;
+    line-height: 1.8em;
+    padding-left:1em;
+    padding-right:1em;
+  }
+
+
+
+  &.tx-special {
+    padding-top: 0;
+  }
+
+}
+
+
+.btn-text {
+  text-decoration: none;
+  color:$color-main2;
+  font-weight: 600;
+  padding-bottom: 0.1em;
+  border-bottom: 3px solid $color-main2;
+  transition: all .15s ease-in-out;
+
+  &:hover,
+  &:active {
+    color:$color-dark;
+    border-bottom-color: $color-dark;
+    transform: scale(1.05);
+  }
+
+
+}
+
+
+
+.btn,
+.btn-text {
+  position: relative;
+
+  .icon {
+    position:absolute;
+    right: -2.4em;
+    top: -0.4em;
+    width:1.8em;
+    visibility: hidden;
+  }
+
+  &:hover .icon {
+    //transform: rotateZ(10deg);
+    visibility: visible;
+  }
+}
+
+
+
+

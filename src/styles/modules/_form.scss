@@ -1,0 +1,43 @@
+.form {
+
+    ::placeholder {
+        color:$color-grey2;
+    }
+
+    
+    input[type="text"], 
+    input[type="email"], 
+    textarea
+    {
+        background: $color-sec2;
+        width:100%;
+        border:0px;
+        //border-bottom: 2px solid $color-dark;
+        padding:$sp-4 $sp-5;
+        font-size: $font-sz2;
+        color:$color-dark;
+        outline: none;
+        transition:all 0.3s ease-in-out;
+        font-family: $font-family-sans;
+        border-radius: 25px;
+
+        &:active, 
+        &:focus {
+            background-color: rgba($color-light, 0.3);
+            padding-left: $sp-3;
+        }
+    }
+
+
+
+    &.no-labels label{
+        display:none;
+    }
+
+   .form-control {
+    margin-bottom: $sp-5;
+
+   } 
+
+
+}

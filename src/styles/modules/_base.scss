@@ -1,0 +1,319 @@
+@use "sass:map";
+
+:root {  
+  // colors
+  @each $key, $val in $colors {
+    --#{$key}: #{map.get($val, color)};
+  }
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+    font-size: $base-font-sz + px;
+
+  @include for-small {
+    font-size: $base-font-sz-sm + px;;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: $font-main;
+  font-weight: 300;
+  color:$color-dark;
+  font-size: $font-sz2;
+}
+
+p {
+  line-height: 1.25em;
+  margin: 0 0 0.5em 0;
+}
+
+h1 + p,
+h2 + p
+ {
+  margin-top: 1em;
+}
+
+
+
+strong {
+  font-weight: 500;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.05;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: $font-family-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: $font-sz8;
+}
+
+h2 {
+  font-size: $font-sz8;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: $font-sz5;
+  margin-bottom: 0.6em;
+  line-height: 1;
+}
+
+h4 {
+  font-size:$font-sz3;
+  margin-bottom: 0.8em;
+}
+
+h5 {
+  font-size:$font-sz3;
+  margin-bottom: 0.8em;
+}
+
+
+a {
+  color:var(--color-dark);
+}
+
+a.link-plain {
+  text-decoration: none;
+}
+
+ul {
+  margin-left:0;
+  padding-left: 1em;
+  
+
+  li {
+    font-size: inherit;
+    margin-bottom: 0.5em;
+
+  }
+}
+
+
+
+a:visited {
+  //color:var(--color-dark);
+}
+
+figure {
+  margin:0;
+}
+
+
+address {
+  display: inline-block;
+}
+
+
+/* containers */
+
+.container-full {
+  width: 100%;
+}
+
+.container {
+  max-width: 1120px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:$sp-6;
+  padding-right:$sp-6;
+
+  &.is-large{
+    max-width: 1400px;
+
+  }
+
+  &.is-small{
+    max-width: 1120px;
+  }
+
+  &.is-xsmall{
+    max-width: 400px;
+  }
+
+
+}
+
+
+
+
+
+
+
+/* header and navbar */
+
+.page-header {
+  position: relative;
+  padding-top:0;
+  padding-bottom:$sp-4;
+  z-index: 999;
+  top:0;
+  width: 100%;
+
+.logo {
+  position: relative;
+  margin-top: $sp-6;
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-height: 40px;
+}
+
+
+
+@include for-small {
+  img {
+    width: 100%;
+    position: relative;
+  }
+}
+
+}
+
+&.is-overlay {
+  position: absolute;
+}
+
+@include for-small{
+  padding-bottom:$sp-3;
+
+  img {
+   width:50px;
+   margin-top:$sp-2;
+
+   }
+
+
+}
+
+&.co-bg-ma {
+  a:hover {
+   
+  }
+
+  .nav-hor {
+    font-size: 1.35rem;
+  }
+}
+
+}
+
+
+/* footer */
+.page-footer {
+
+  padding-top:$sp-6;
+  padding-bottom:$sp-6;;
+
+  .logo {
+    max-height: 35px;
+    margin-top:$sp-4;
+  }
+
+}
+
+
+/* lists */
+
+.list1 {
+
+  & > li {
+    margin-top: $sp-7;
+  }
+
+  strong {
+    display: inline-block;
+    font-size: 1.4em;
+    margin-bottom: $sp-6;
+  }
+
+  ol {
+    margin-left: 0;
+    padding-left: 2em;
+  }
+
+  ol > li {
+    padding-left: $sp-4;
+    margin-bottom: $sp-4;
+  }
+
+  list-style: none;
+
+}
+
+/* tables */
+
+.table {
+
+
+  &.wi-100 {
+    width:100%;
+
+    tbody tr td:last-child {
+      text-align: right;
+    }
+  }
+
+    th {
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: $sp-7;
+  }
+
+  td {
+    padding-bottom: $sp-6;
+  }
+
+}
+
+
+
+/* accordion */
+
+.accordion {
+
+.acc-item {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  strong {
+    cursor: pointer;
+  }
+
+  strong:hover,
+  strong:active {
+    color:$color-main;
+  }
+
+  .acc-content {
+    display: none;
+  }
+
+  &.active .acc-content {
+    display: block;
+    margin-bottom: $sp-7;
+  }
+}
+
+}
+
+

@@ -1,0 +1,29 @@
+@use "sass:map";
+
+// text colors
+@each $name, $color-map in $colors { 
+    .co-tx-#{map.get($color-map, short)} { 
+        color:#{map.get($color-map, color)};
+        color:var(--#{$name});
+    }
+}
+
+// background colors
+@each $name, $color-map in $colors { 
+    .co-bg-#{map.get($color-map, short)} { 
+        background-color:#{map.get($color-map, color)};
+        background-color:var(--#{$name});
+    }
+}
+
+// border colors
+@each $name, $color-map in $colors { 
+    .co-bo-#{map.get($color-map, short)} { 
+        border-color:#{map.get($color-map, color)};
+        border-color:var(--#{$name});
+    }
+}
+
+
+
+

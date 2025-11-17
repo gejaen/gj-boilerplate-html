@@ -1,0 +1,140 @@
+@use "sass:color";
+
+// main colors
+$color-main: #FF9742;
+$color-main2: #FFEBE8;
+$color-main3: #FCFFD3;
+
+
+
+
+// color variations
+$color-main-dark: color.adjust($color-main, $lightness: -10%);
+$color-main-light: color.adjust($color-main, $lightness: 5%);
+$color-main-transparent: rgba($color-main, 0.35);
+$color-main2-dark: color.adjust($color-main2, $lightness: -10%);
+$color-main2-light: color.adjust($color-main2, $lightness: 15%);
+$color-main2-transparent: rgba($color-main2, 0.5);
+$color-main3-dark: color.adjust($color-main3, $lightness: -10%);
+$color-main3-light: color.adjust($color-main3, $lightness: 15%);
+$color-main3-transparent: rgba($color-main3, 0.5);
+
+
+
+// dark and light
+$color-light:#ffffff;
+$color-dark:#000000;
+
+// greys
+$color-grey:#3A3A3A;
+$color-grey1: color.adjust($color-grey, $lightness: 15%);
+$color-grey2: color.adjust($color-grey, $lightness: 25%);
+$color-grey3: color.adjust($color-grey, $lightness: 40%);
+$color-grey4: color.adjust($color-grey, $lightness: 54%);
+$color-grey5: color.adjust($color-grey, $lightness: 68%);
+//$color-grey1:lighten($color-grey, 15%);
+//$color-grey2:lighten($color-grey, 25%);
+//$color-grey3:lighten($color-grey, 36%);
+//$color-grey4:lighten($color-grey, 68%);
+//$color-grey5:lighten($color-grey, 75%);
+
+// some colors
+$color-red:#E62322;
+$color-green:#26B82D;
+$color-orange:#E2971F;
+$color-purple:#7388ff;
+
+
+// space units
+$sp-1 : 2px;
+$sp-2 : 4px;
+$sp-3 : 8px;
+$sp-4 : 12px;
+$sp-5 : 18px;
+$sp-6 : 26px;
+$sp-7 : 38px;
+$sp-8 : 64px;
+$sp-9 : 86px;
+$sp-10 : 120px;
+$sp-11 : 140px;
+$sp-12 : 160px;
+
+// fonts
+$font-family-sans : 'Inter', sans-serif;
+$font-family-mono : 'DM Mono', monospace;
+$font-family-serif: 'Josefin Slab', serif;
+$font-family-special : 'Coolvetica', sans-serif;
+$font-main: $font-family-sans;
+
+
+// font sizes -------------------
+$base-font-sz: 16;
+$base-font-sz-sm: 14;
+
+$font-sz-html: $base-font-sz + px;
+
+$font-sz0 : calc(14 / $base-font-sz) + rem !default; 
+$font-sz1 : calc(16 / $base-font-sz) + rem !default; 
+$font-sz2 : calc(18 / $base-font-sz) + rem !default; 
+$font-sz3 : calc(20 / $base-font-sz) + rem !default; 
+$font-sz4 : calc(24 / $base-font-sz) + rem !default; 
+$font-sz5 : calc(30 / $base-font-sz) + rem !default; 
+$font-sz6 : calc(36 / $base-font-sz) + rem !default; 
+$font-sz7 : calc(48 / $base-font-sz) + rem !default; 
+$font-sz8 : calc(56 / $base-font-sz) + rem !default; 
+$font-sz9 : calc(72 / $base-font-sz) + rem !default; 
+
+
+
+
+
+
+// breakpoints (desktop first!)
+$breakpoint-sm : 800px;
+$breakpoint-md :$breakpoint-sm;
+$breakpoint-lg : 1024px;
+
+
+
+
+
+// Maps for loops -------------------
+
+
+// map with colors
+$colors: (
+  color-main : (color: $color-main, short: ma),
+  color-main2 : (color : $color-main2, short: ma2),
+  color-main3 : (color : $color-main3, short: ma3),
+
+  color-main-dark : (color : $color-main-dark, short: ma-d),
+  color-main-light : (color : $color-main-light, short: ma-l),
+  color-main-transparent : (color : $color-main-transparent, short: ma-t),
+
+  color-main2-dark : (color : $color-main2-dark, short: ma2-d),
+  color-main2-light : (color : $color-main2-light, short: ma2-l),
+  color-main2-transparent : (color : $color-main2-transparent, short: ma2-t),
+
+  color-main3-dark : (color : $color-main3-dark, short: ma3-d),
+  color-main3-light : (color : $color-main3-light, short: ma3-l),
+  color-main3-transparent : (color : $color-main3-transparent, short: ma3-t),
+
+  color-light : (color : $color-light, short: light),
+  color-dark : (color : $color-dark, short: dark),
+
+  color-grey : (color : $color-grey, short: gr),
+  color-grey1 : (color : $color-grey1, short: gr1),
+  color-grey2 : (color : $color-grey2, short: gr2),
+  color-grey3 : (color : $color-grey3, short: gr3),
+  color-grey4 : (color : $color-grey4, short: gr4),
+  color-grey5 : (color : $color-grey5, short: gr5),
+
+  color-red : (color : $color-red, short: "red"),
+  color-green : (color : $color-green, short: "green"),
+  color-orange : (color : $color-orange, short: "orange"),
+  color-purple : (color : $color-purple, short: "purple"),
+);
+
+
+
+
