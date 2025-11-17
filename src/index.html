@@ -10,23 +10,27 @@
 <body>
   <header class="page-header">
     <include src="partials/header.html"></include>
-</header>
+  </header>
 
-<main>
+  <main>
 
-  <!-- intro section -->
-
-    <section>
+    <!-- intro section -->
+         <section class="co-bg-ma">
       <img src="images/image-home.jpg" alt="Main Image">
 
-      <div class="co-bg-ma">
-        <div class="container is-large"></div>
-        <p>Welcome to <strong>VAN TRAVEL</strong> – your hub for hitting the open road in comfort and style. Whether you’re a seasoned nomad or just dreaming of freedom on four wheels, we’ve got the tips, routes, gear reviews, and community stories to make every mile unforgettable. Pack your curiosity, fire up the engine, and let’s explore the world together, one highway at a time!</p>
-        
-        <p class="p-t5">
-            <a class="btn co-bg-dark tx-special" href="about.html">About the show</a>
+
+ 
+        <div class="container is-small tx-poc p-y8">
+          <p class="tx-sz4">Welcome to <strong>VAN TRAVEL</strong> – your hub for hitting the open road in comfort and
+            style. Whether you’re a seasoned nomad or just dreaming of freedom on four wheels, we’ve got the tips,
+            routes, gear reviews, and community stories to make every mile unforgettable. Pack your curiosity, fire up
+            the engine, and let’s explore the world together, one highway at a time!</p>
+
+          <p class="p-t5">
+            <a class="btn co-bg-dark tx-special" href="about.html">About us</a>
           </p>
-      </div>
+        </div>
+ 
 
     </section>
     <!-- / intro section -->
@@ -36,14 +40,13 @@
     <section class="co-bg-ma2 p-y10">
       <div class="container is-large">
 
-        <h2 class="tx-poc m-b10">Newes Stories</h2>
+        <h2 class="tx-poc m-b9">Newes Stories</h2>
 
         <div class="grid gutter-6">
 
           <!-- item -->
           <article class="wi-4-12">
-          <include src="partials/itm-post.html"
-          locals='{
+            <include src="partials/itm-post.html" locals='{
             "title": "Amalfi Coast Escape",
             "image": "images/img-det1.jpg",
             "text": "From Naples to Positano, we parked on cliffside vistas, cooked fresh pasta in our tiny kitchen, and savored sunrise aperitivos over glittering Mediterranean waters.",
@@ -53,18 +56,86 @@
           </article>
           <!-- / item -->
 
-         
+          <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Alentejo Hideaway",
+            "image": "images/img-det2.jpg",
+            "text": "Drifting through Portugal’s Alentejo, we tucked into ancient white villages, harvested olives, picnicked by a tranquil river, and fell asleep beneath a canopy of stars. ",
+            "link": "det2.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
+          <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Nordic Fjord Journe",
+            "image": "images/img-det3.jpg",
+            "text": "Guided by Norway’s midnight sun, our solar‑charged van traced emerald fjords, camped beside thundering waterfalls, and proved eco‑friendly travel thrives in rugged wilderness.",
+            "link": "det1.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
 
 
         </div>
 
         <div class="tx-poc m-t6">
-          <a class="btn is-hollow tx-special" href="categoria.html">All Stories</a>
+          <a class="btn co-bg-dark tx-special" href="categoria.html">Read all Stories</a>
         </div>
 
       </div>
     </section>
     <!-- / newest stories section -->
+
+
+
+
+        <!-- roomtour section -->
+    <section class="co-bg-ma3 p-y10">
+      <div class="container is-large">
+
+
+        <h2 class="tx-poc m-b5">Room Tours</h2>
+        <div class="grid fx fx-jst-center">
+          <div class="wi-7-12">
+          <p class="tx-poc tx-sz4">Explore our van‑life site’s virtual room tours—quick, 360° walkthroughs of smart storage, comfy sleepers, compact kitchens, and eco‑upgrades—so you can picture your perfect mobile home before you travel.</p>
+            </div>
+        </div>
+
+
+        <div class="grid gutter-6">
+
+          <!-- item -->
+          <div class="wi-6-12">
+          <div class="video-container m-t7">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0y-J3Lj27sk?si=BToUEi4i11ONXF_d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+          </div>
+
+          </div>
+          <!-- item -->
+
+                    <!-- item -->
+          <div class="wi-6-12">
+          <div class="video-container m-t7">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vdbWuCWPrns?si=CvzjkpZBYhAXkhzW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
+          </div>
+          <!-- item -->
+
+
+
+          </div>
+      </section>
+       <!-- / roomtour section -->
+
 
 
 
@@ -81,7 +152,7 @@
 
 
   <footer class="container is-large p-t9">
-  <include src="partials/footer.html"></include>
+    <include src="partials/footer.html"></include>
   </footer>
 
 </body>
