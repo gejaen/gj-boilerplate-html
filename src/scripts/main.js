@@ -1,3 +1,28 @@
+/* blog item */
+
+// get blog items
+function blogItems() {
+const itemsWithLinks = document.querySelectorAll('[data-link]');
+
+itemsWithLinks.forEach(el => {
+    el.addEventListener('mouseover', (e) => {
+            el.classList.toggle('ef-shake');
+        });
+    el.addEventListener('mouseout', (e) => {
+            el.classList.toggle('ef-shake');
+        });
+
+    el.addEventListener('click', (e) => {
+            window.location.assign(el.dataset.link)
+        });    
+});
+
+}
+
+
+
+
+
 /* accordion */
 
 function accordion() {
@@ -31,12 +56,13 @@ function accCloseAll(items) {
     
 }
 
-/*
+
 // on page load 
 window.addEventListener('load', () => {
-    accordion();
+    //accordion();
+    blogItems();
 });
-*/
+
 
 
 

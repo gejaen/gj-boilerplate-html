@@ -616,7 +616,12 @@ h3 {
   line-height: 1;
 }
 
-h4, h5 {
+h4 {
+  margin-bottom: .8em;
+  font-size: 1.875rem;
+}
+
+h5 {
   margin-bottom: .8em;
   font-size: 1.25rem;
 }
@@ -769,6 +774,10 @@ address {
 
 .table td {
   padding-bottom: 26px;
+}
+
+.is-wysiwyg p {
+  margin-bottom: 1.2em;
 }
 
 .accordion .acc-item {
@@ -4075,6 +4084,24 @@ address {
   font-weight: 600;
 }
 
+.link-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-list a {
+  text-decoration: none;
+}
+
+.link-list li p {
+  margin: 0;
+}
+
+.link-list li {
+  margin-bottom: 1.3em;
+}
+
 .nav-opener {
   color: #ff9742;
 }
@@ -4570,6 +4597,57 @@ address {
 
 .shape-round {
   border-radius: 50%;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-8px);
+  }
+
+  20% {
+    transform: translateX(8px);
+  }
+
+  30% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(6px);
+  }
+
+  50% {
+    transform: translateX(-4px);
+  }
+
+  60% {
+    transform: translateX(4px);
+  }
+
+  70% {
+    transform: translateX(-2px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+
+  90% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.ef-shake {
+  cursor: pointer;
+  animation: .5s cubic-bezier(.36, .07, .19, .97) both shake;
 }
 
 .bo {

@@ -74,7 +74,7 @@ h3 {
 }
 
 h4 {
-  font-size:$font-sz3;
+  font-size:$font-sz5;
   margin-bottom: 0.8em;
 }
 
@@ -285,6 +285,15 @@ img {
 }
 
 
+
+/* output of wysiwyg editor */
+
+.is-wysiwyg {
+  p {
+    margin-bottom: 1.2em;
+  }
+
+}
 
 /* accordion */
 
