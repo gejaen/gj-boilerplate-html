@@ -4083,6 +4083,41 @@ address {
   color: #fcffd3;
 }
 
+.form-simple ::placeholder {
+  color: #7a7a7a;
+}
+
+.form-simple input[type="text"], .form-simple input[type="email"], .form-simple input[type="url"], .form-simple textarea {
+  color: #000;
+  background: #fff;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  width: 100%;
+  padding: 12px 18px;
+  font-family: Inter, sans-serif;
+  font-size: 1.125rem;
+  transition: all .3s ease-in-out;
+}
+
+.form-simple input[type="text"]:active, .form-simple input[type="text"]:focus, .form-simple input[type="email"]:active, .form-simple input[type="email"]:focus, .form-simple input[type="url"]:active, .form-simple input[type="url"]:focus, .form-simple textarea:active, .form-simple textarea:focus {
+  background-color: #ffffff4d;
+  padding-left: 8px;
+}
+
+.form-simple.no-labels label {
+  display: none;
+}
+
+.form-simple .form-control {
+  margin-bottom: 18px;
+}
+
+.form-simple .form-control label {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
 .tx-sz0 {
   font-size: .875rem;
 }
@@ -4243,15 +4278,15 @@ address {
   width: 33%;
 }
 
-.wi-max-80 {
+.wi-max-xxs {
   max-width: 80px;
 }
 
-.wi-max-120 {
+.wi-max-xs {
   max-width: 120px;
 }
 
-.wi-max-160 {
+.wi-max-s {
   max-width: 180px;
 }
 

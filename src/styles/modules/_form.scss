@@ -1,4 +1,4 @@
-.form {
+.form-simple {
 
     ::placeholder {
         color:$color-grey2;
@@ -7,9 +7,10 @@
     
     input[type="text"], 
     input[type="email"], 
+    input[type="url"], 
     textarea
     {
-        background: $color-sec2;
+        background: $color-light;
         width:100%;
         border:0px;
         //border-bottom: 2px solid $color-dark;
@@ -19,7 +20,7 @@
         outline: none;
         transition:all 0.3s ease-in-out;
         font-family: $font-family-sans;
-        border-radius: 25px;
+        border-radius: 0px;
 
         &:active, 
         &:focus {
@@ -37,6 +38,10 @@
    .form-control {
     margin-bottom: $sp-5;
 
+    label {
+        display: inline-block;
+        margin-bottom: $sp-4;
+    }
    } 
 
 

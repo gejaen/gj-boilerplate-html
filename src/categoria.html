@@ -15,6 +15,168 @@
 
   <main>
 
+        <!-- stories section -->
+    <section class="p-t10">
+      <div class="container is-large">
+
+        <h1 class="tx-poc m-b5">Stories</h1>
+                <div class="grid fx fx-jst-center m-b9">
+          <div class="wi-6-12">
+          <p class="tx-poc tx-sz4">Journey through real‑life van tales: daring routes, hidden gems, and everyday moments that inspire your own road‑trip adventure.</p>
+            </div>
+        </div>
+
+
+        <div class="grid gutter-6">
+
+          <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Amalfi Coast Escape",
+            "image": "images/img-det1.jpg",
+            "text": "From Naples to Positano, we parked on cliffside vistas, cooked fresh pasta in our tiny kitchen, and savored sunrise aperitivos over glittering Mediterranean waters.",
+            "link": "det1.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+          <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Alentejo Hideaway",
+            "image": "images/img-det2.jpg",
+            "text": "Drifting through Portugal’s Alentejo, we tucked into ancient white villages, harvested olives, picnicked by a tranquil river, and fell asleep beneath a canopy of stars. ",
+            "link": "det2.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
+          <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Nordic Fjord Journe",
+            "image": "images/img-det3.jpg",
+            "text": "Guided by Norway’s midnight sun, our solar‑charged van traced emerald fjords, camped beside thundering waterfalls, and proved eco‑friendly travel thrives in rugged wilderness.",
+            "link": "det1.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
+                    <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Midnight Sun in the Lofoten Archipelago",
+            "image": "images/img-det4.jpg",
+            "text": "A couple’s spontaneous detour to Norway’s rugged islands turned a simple parking spot into a surreal midnight‑sun picnic, complete with fresh cod and dancing lanterns.",
+            "link": "det1.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
+                    <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Vinyl & Vines in Bordeaux",
+            "image": "images/img-det5.jpg",
+            "text": "While cruising through southwest France, we discovered a hidden vineyard that doubles as a pop‑up record‑store, where tasting bold reds meets spinning classic rock under ancient oak trees.",
+            "link": "det1.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
+
+                    <!-- item -->
+          <article class="wi-4-12">
+            <include src="partials/itm-post.html" locals='{
+            "title": "Alpine Alpine: Hiking the Dolomites from a Van‑Camper",
+            "image": "images/img-det6.jpg",
+            "text": "From sunrise coffee on a cliffside terrace to night‑time stargazing in a mountain bivouac, our van became the perfect base for conquering towering peaks and savoring Italian aperitivos.",
+            "link": "det1.html"
+          }'></include>
+
+          </article>
+          <!-- / item -->
+
+
+
+
+
+
+
+        </div>
+
+
+
+      </div>
+    </section>
+    <!-- stories section -->
+
+
+
+
+
+    <!-- submit section -->
+    <section class="co-bg-ma2 p-y10">
+      <div class="container">
+
+
+        <h2 class="tx-poc m-b8">Submit Your Story</h2>
+
+            <form class="form-simple" action="/" method="post" novalidate>
+
+              <div class="grid">
+
+          <div class="wi-4-12">
+            <div class="form-control">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+        </div>
+        </div>
+
+        <div class="wi-4-12">
+          <div class="form-control">
+        <label for="url">Link to your Web or Blog</label>
+        <input type="url" id="url" name="url">
+        </div>
+        </div>
+
+        <div class="wi-4-12">
+          <div class="form-control">
+        <label for="email">Contact Email</label>
+        <input type="email" id="email" name="email">
+        </div>
+        </div>
+
+
+        <div class="wi-1">
+          <div class="form-control">
+        <label for="story">Your Story</label>
+        <textarea id="story" name="story" rows="8" minlength="20"></textarea>
+        </div>
+        </div>
+
+  
+        <button class="btn tx-sz2 co-bg-dark tx-special" type="submit">Submit your story</button>
+
+        </div>
+    </form>
+
+
+        </div>
+
+
+      </section>
+       <!-- / submit section -->
+
   
   </main>
 
